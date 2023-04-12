@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Utility</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<div id="generalDiv">
+		<div><p>*** Controlla se gli elementi della colonna A sono presenti nella colonna B ***</p></div>
+		<div>
+			<textarea id="input_test" cols="50" rows="35" placeholder="* Colonna A"></textarea>
+			<textarea id="input_test2" cols="50" rows="35" placeholder="* Colonna B"></textarea>
+			<textarea id="result" cols="50" rows="35" placeholder="result" disabled="true"></textarea>
+			<textarea id="numeroElementi" cols="20" rows="1" placeholder="n° elementi" disabled="true"></textarea>
+		</div>
+		<div>
+			<input id="value" type="text" placeholder="dove splittare">
+			<button onclick="split()" id="btn">Split</button>
+		</div>
+		<div>
+			<input id="separatore" type="text" placeholder="separatore">
+			<button onclick="oggettoInRiga()" id="btn">Metti in riga</button>
+		</div>
+		<div>
+			<input id="separatore_a" type="text" placeholder="Es: (">
+			<input id="separatore_b" type="text" placeholder="Es: )">
+			<button onclick="estrai()" id="btn">Estrai</button>
+		</div>
+		<div>
+			<input id="nomeNodoXml" type="text" placeholder="Nome del nodo Es: item">
+			<input id="nomeNodoCondizioneXml" type="text" placeholder="Condizione Es:trusted">
+			<input id="condizioneValoreXml" type="text" placeholder="Valore condizione Es:true">
+			<button onclick="estraiDaXml()" id="btn">Estrai come XML</button>
+		</div>
+		<div>
+			<input id="_nomeNodoXml" type="text" placeholder="Nome del nodo Es: item">
+			<input id="_nomeNodoCondizioneXml" type="text" placeholder="Condizione Es:gtin">
+			<input id="_condizioneValoreXml" type="text" placeholder="Es:18014093481065;18014093481065">
+			<button onclick="rimuoviDaXml()" id="btn">Estrattore multivalori da XML</button>
+		</div>
+		<div>
+			<!--<input id="nomeNodoHTML" type="text" placeholder="Nome del nodo Es: item">-->
+			<select id="selectClassId"><option value=".">class</option><option value="#">id</option></select>
+			<input id="classOrId" type="text" placeholder="Identificativo class/id">
+			<input id="valclassOrId" type="text" placeholder="Tag Es:span">
+			<button onclick="getValuesFromHTML()" id="btn">Estrattore multivalori da HTML</button>
+		</div>
+		<div>
+			<!--<input id="value" type="text" placeholder="* text to search">-->
+			<button onclick="extractFromJson()" id="btn">COMPARE</button>
+			<button onclick="trovaDuplicati()" id="btn">TROVA DUPLICATI</button>
+			<button onclick="rimuoviDuplicati()" id="btn">RIMUOVI DUPLICATI</button>
+			<button onclick="reset()" id="btn">RESET</button>
+		</div>
+		<div class="fa-3x" id="uploading">
+			<!--<i id="uploading" class="fa-solid fa-spinner fa-spin-pulse"></i>-->
+			<!--<i class="fa fa-spinner fa-spin" style="font-size:24px"></i>-->
+			<i class="fa fa-refresh fa-spin" id="icon"></i>
+		</div>
+	</div>
+
+	
+
+	<style type="text/css">
+		.master{
+			background: lightgrey;
+			opacity: 0.5;
+		}
+		#generalDiv{
+			width: 100%;
+			min-height: 97vh;
+		}
+		#uploading{
+		display: none;
+		position: relative;
+		z-index: 1;
+		align-items: center;
+		justify-content: center;
+		display: flex;
+		top: -45vh;
+		}
+		#icon{
+			font-size: 24px;
+			display: none;
+		}
+	</style>
+	<script type="text/javascript" src="utility.js"></script>
+</body>
+</html>
