@@ -6,7 +6,29 @@ let nElementiEstratti = [];
 let arrayVal = [];
 
 
+
 function extractFromJson() {
+	check();
+	let valueToExtract = document.getElementById('keyValue').value;
+	//console.log(valueToExtract);
+	let values = "[" + document.getElementById('input_test').value + "]";
+	//console.log(values);
+	const formattedJson = values.replace(/(['"])?([a-z0-9A-Z_]+)(['"])?:/g, '"$2":');
+	//console.log(formattedJson);
+	object = JSON.parse(formattedJson);
+	//console.log(object);
+	let array = [];
+
+	for(i in object){
+		array += object[i][valueToExtract] + '\n';
+		nElementiEstratti.push(object[i] + '\n');				
+	}
+	
+	document.getElementById("result").innerHTML = array;
+	document.getElementById('numeroElementi').innerHTML = nElementiEstratti.length;
+		}
+
+function compareData() {
 	check();
 	//let valueToExtract = document.getElementById('value').value;
 	let values = document.getElementById('input_test').value;
