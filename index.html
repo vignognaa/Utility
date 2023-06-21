@@ -23,6 +23,10 @@
 			<button onclick="oggettoInRiga()" id="btn">Metti in riga</button>
 		</div>
 		<div>
+			<input id="keyValue" type="text" placeholder="Chiave Es:gtinCode">
+			<button onclick="extractFromJson()">Estrai da Json</button>
+		</div>
+		<div>
 			<input id="separatore_a" type="text" placeholder="Es: (">
 			<input id="separatore_b" type="text" placeholder="Es: )">
 			<button onclick="estrai()" id="btn">Estrai</button>
@@ -48,7 +52,7 @@
 		</div>
 		<div>
 			<!--<input id="value" type="text" placeholder="* text to search">-->
-			<button onclick="extractFromJson()" id="btn">COMPARE</button>
+			<button onclick="compareData()" id="btn">COMPARE</button>
 			<button onclick="trovaDuplicati()" id="btn">TROVA DUPLICATI</button>
 			<button onclick="rimuoviDuplicati()" id="btn">RIMUOVI DUPLICATI</button>
 			<button onclick="reset()" id="btn">RESET</button>
