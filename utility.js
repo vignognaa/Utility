@@ -11,8 +11,11 @@ function extractFromJson() {
 	check();
 	let valueToExtract = document.getElementById('keyValue').value;
 	//console.log(valueToExtract);
-	let values = "[" + document.getElementById('input_test').value + "]";
-	//console.log(values);
+	let values = document.getElementById('input_test').value;
+	console.log(values.charAt(0));
+	if (values.charAt(0) != "[" && values.charAt(values.length - 1) != "]") {
+		values = "[" + values + "]";
+	}
 	const formattedJson = values.replace(/(['"])?([a-z0-9A-Z_]+)(['"])?:/g, '"$2":');
 	//console.log(formattedJson);
 	object = JSON.parse(formattedJson);
